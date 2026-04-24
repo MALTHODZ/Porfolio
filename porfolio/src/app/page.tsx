@@ -26,10 +26,10 @@ export default async function HomePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <a href="#proyectos" className="text-center font-body font-semibold px-8 py-3.5 rounded-md text-on-primary bg-gradient-to-br from-primary to-primary-container hover:opacity-90 transition-opacity">
+            <a href="proyectos" className="text-center font-body font-semibold px-8 py-3.5 rounded-md text-on-primary bg-gradient-to-br from-primary to-primary-container hover:opacity-90 transition-opacity">
               Ver Proyectos
             </a>
-            <a href="#contacto" className="text-center font-body font-semibold px-8 py-3.5 rounded-md text-primary bg-surface-variant/20 border border-outline-variant/30 hover:bg-surface-variant/40 transition-colors">
+            <a href="contacto" className="text-center font-body font-semibold px-8 py-3.5 rounded-md text-primary bg-surface-variant/20 border border-outline-variant/30 hover:bg-surface-variant/40 transition-colors">
               Hablemos
             </a>
           </div>
@@ -80,7 +80,7 @@ export default async function HomePage() {
           </div>
           <div className="w-full md:w-1/2 md:max-w-md ml-auto">
             <p className="text-on-surface-variant text-sm md:text-base leading-relaxed text-left md:text-right">
-              Metodologías y principios que guían mi proceso de desarrollo para entregar productos digitales de alta calidad.
+              Metodologías y principios que guían mi proceso de desarrollo para entregar productos de calidad.
             </p>
           </div>
         </div>
@@ -125,7 +125,6 @@ export default async function HomePage() {
             </div>
             <div className="flex flex-wrap gap-2 mt-auto">
               <span className="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold tracking-wider text-on-surface-variant uppercase transition-colors group-hover:text-primary">Design Systems</span>
-              <span className="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold tracking-wider text-on-surface-variant uppercase transition-colors group-hover:text-primary">Figma</span>
             </div>
           </div>
 
@@ -144,7 +143,6 @@ export default async function HomePage() {
             </div>
             <div className="flex flex-wrap gap-2 mt-auto">
               <span className="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold tracking-wider text-on-surface-variant uppercase transition-colors group-hover:text-primary">SEO</span>
-              <span className="px-3 py-1 bg-surface-container-highest rounded-full text-[10px] font-bold tracking-wider text-on-surface-variant uppercase transition-colors group-hover:text-primary">A11Y</span>
             </div>
           </div>
         </div>
