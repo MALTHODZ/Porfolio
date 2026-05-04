@@ -1,2 +1,2 @@
-# Porfolio
-Porfolio para añadir mis proyectos
+# Portfolio
+Portfolio para añadir mis proyectos
