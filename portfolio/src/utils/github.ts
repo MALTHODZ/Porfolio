@@ -13,13 +13,20 @@ export async function getGithubRepos(username: string): Promise<Project[]> {
 
   const data = await res.json();
 
-  return data.map((repo: any) => ({
-    id: repo.id.toString(),
-    title: repo.name,
-    description: repo.description,
-    url: repo.html_url,
-    language: repo.language,
-    // Usamos la API de OpenGraph de Github que genera una imagen bonita de "carta social"
-    imageUrl: `https://opengraph.githubassets.com/1/${username}/${repo.name}` 
-  }));
+  return data.map((repo: any) => {
+    // Asignar imágenes específicas según el nombre del repo
+    let customImage = `https://opengraph.githubassets.com/1/${username}/${repo.name}`;
+    if (repo.name === 'Portfolio') customImage = '/projects/portfolio_cover.png';
+    else if (repo.name === 'Proyecto-IA') customImage = '/projects/ai_project_cover.png';
+    else if (repo.name === 'Proyecto-Final') customImage = '/projects/final_project_cover.png';
+
+    return {
+      id: repo.id.toString(),
+      title: repo.name,
+      description: repo.description,
+      url: repo.html_url,
+      language: repo.language,
+      imageUrl: customImage
+    };
+  });
 }

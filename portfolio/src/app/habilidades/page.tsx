@@ -29,6 +29,7 @@ export default function HabilidadesPage() {
              src="/profile.png" 
              alt="Mi retrato profesional" 
              fill 
+             sizes="(max-width: 1024px) 100vw, 450px"
              className="object-cover object-center" 
            />
            {/* Subtle gradient overlay to blend at the bottom */}

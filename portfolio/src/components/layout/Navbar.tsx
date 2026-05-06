@@ -31,6 +31,7 @@ export function Navbar() {
             <li key={link.name}>
               <Link
                 href={link.href}
+                prefetch={false}
                 className={`relative pb-2 transition-colors ${isActive ? 'text-on-surface' : 'hover:text-on-surface'
                   }`}
               >

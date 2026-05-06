@@ -3,44 +3,60 @@ import { Project } from '../../types';
 
 interface ProjectCardProps {
   project: Project;
+  isLarge?: boolean;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, isLarge }: ProjectCardProps) {
   const coverImage = project.imageUrl || '/default-project.jpg';
-
+  
   return (
-    <article className="flex flex-col border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all bg-white dark:bg-zinc-900 duration-300">
-      <div className="relative w-full h-48 bg-zinc-100 dark:bg-zinc-800 border-b border-zinc-200 dark:border-zinc-800">
+    <article className="group w-full h-full flex flex-col bg-surface-container rounded-2xl overflow-hidden border border-white/5 hover:border-white/10 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
+      <div className={`relative w-full overflow-hidden bg-surface-container-highest ${isLarge ? 'h-64 md:h-80' : 'h-56'}`}>
         <Image 
           src={coverImage} 
           alt={`Imagen del proyecto ${project.title}`} 
           fill 
           style={{ objectFit: 'cover' }}
-          className="hover:scale-105 transition-transform duration-500"
+          className="group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+          unoptimized={true}
         />
+        {/* Subtle vignette/gradient to blend with the card */}
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent opacity-80"></div>
       </div>
       
-      <div className="p-5 flex flex-col flex-grow">
-        <h3 className="text-lg font-bold mb-2 flex items-center justify-between dark:text-white">
-          {project.title}
-        </h3>
-        <p className="text-zinc-600 dark:text-zinc-400 text-sm flex-grow mb-4 leading-relaxed">
-          {project.description || 'Sin descripción disponible.'}
-        </p>
-        
-        <div className="flex items-center justify-between mt-auto">
+      <div className="p-6 md:p-8 flex flex-col flex-grow relative z-10">
+        <div className="flex items-center gap-2 mb-4">
           {project.language && (
-            <span className="text-xs px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-md text-zinc-700 dark:text-zinc-300 font-medium">
+            <span className="text-[9px] md:text-[10px] px-3 py-1.5 bg-surface-container-highest rounded-full text-on-surface-variant font-bold tracking-widest uppercase">
               {project.language}
             </span>
           )}
+        </div>
+        
+        <h3 className="font-display text-2xl font-bold mb-3 text-primary group-hover:text-primary-container transition-colors">
+          {project.title}
+        </h3>
+        
+        <p className="text-on-surface-variant text-sm md:text-base flex-grow mb-8 leading-relaxed">
+          {project.description || 'Exploración técnica y desarrollo del sistema con un enfoque centrado en rendimiento y accesibilidad.'}
+        </p>
+        
+        <div className="flex items-center gap-6 mt-auto">
           <a 
             href={project.url} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors"
+            className="text-xs font-bold text-secondary hover:text-primary transition-colors inline-flex items-center gap-1 uppercase tracking-wider"
           >
-            Ver en GitHub &rarr;
+            Ver Caso de Estudio <span className="text-lg leading-none ml-1">↗</span>
+          </a>
+          <a 
+            href={project.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-xs font-semibold text-on-surface-variant hover:text-on-surface transition-colors inline-flex items-center gap-1.5 uppercase tracking-wider ml-auto"
+          >
+            <span className="font-mono text-sm tracking-tighter">&lt; &gt;</span> GITHUB
           </a>
         </div>
       </div>
