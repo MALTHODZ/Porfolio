@@ -177,7 +177,7 @@ export default function ContactoPage() {
         </div>
 
         <div className="bg-surface-container p-6 rounded-2xl border border-white/5 flex flex-col gap-2 justify-center shadow-md">
-          <span className="font-display text-4xl lg:text-5xl font-bold text-secondary">15+</span>
+          <span className="font-display text-4xl lg:text-5xl font-bold text-secondary">7</span>
           <span className="text-[9px] md:text-[10px] font-bold tracking-widest text-on-surface-variant uppercase">Proyectos Listos</span>
         </div>
 

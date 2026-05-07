@@ -14,7 +14,7 @@ export default async function ProyectosPage() {
             <span className="block text-primary">Seleccionados</span>
           </h1>
           <p className="text-on-surface-variant max-w-xl text-sm md:text-base leading-relaxed mt-4">
-            Una exploración de arquitectura de código e interfaces visuales. Cada proyecto representa una síntesis de precisión técnica e intencionalidad estética.
+            Cada proyecto seleccionado representa un enfoque diferente en cuanto a la arquitectura y el diseño.
           </p>
         </div>
         {/* Grid Icon */}
@@ -24,7 +24,7 @@ export default async function ProyectosPage() {
           </svg>
         </div>
       </div>
-      
+
       {projects.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
           {projects.map((project, index) => {

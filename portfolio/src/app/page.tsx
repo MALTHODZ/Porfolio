@@ -99,7 +99,7 @@ export default async function HomePage() {
             <div className="flex-1">
               <h3 className="font-display text-xl font-bold text-on-surface mb-3">Frameworks Modernos</h3>
               <p className="text-on-surface-variant text-sm leading-relaxed mb-6">
-                Domino herramientas como React y Tailwind CSS para crear aplicaciones escalables, mantenibles y preparadas para el futuro.
+                Domino herramientas como React para crear aplicaciones escalables, mantenibles y preparadas para el futuro.
               </p>
             </div>
             <div className="flex flex-wrap gap-2 mt-auto">
